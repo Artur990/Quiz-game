@@ -1,22 +1,22 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
 
 const index = () => {
+  console.log('render quiz newGAme')
+
   return (
-    <div className="w-screen h-screen bg-slate-700 flex justify-center items-center ">
-      <div className="w-1/2 min-w-fit h-2/3  min-h-fit p-2 bg-slate-800 flex-col text-center rounded-xl ">
+    <div className="flex h-screen w-screen items-center justify-center bg-slate-700 ">
+      <div className="sm-h-2/3 h-3/4 min-h-fit w-1/2  min-w-fit flex-col rounded-xl bg-slate-800 p-2 text-center ">
         <div className="text-5xl text-slate-500">Quiz Gra</div>
         <div className="my-4 text-2xl">Nowa Gra</div>
-        <div>Nazwa użytkownika</div>
-        <input className="my-1 bg-slate-700 rounded-md" />
         <div className=" m-1">
-          <div className="p-2 rounded-lg hover:bg-slate-500 hover:text-black bg-slate-900">
+          <div className="rounded-lg bg-slate-900 p-2 hover:bg-slate-500 hover:text-black">
             <Link href="/quiz/1">Rozpoczynam</Link>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default index;
+export default index

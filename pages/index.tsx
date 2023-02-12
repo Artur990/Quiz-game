@@ -1,7 +1,6 @@
-import Head from "next/head";
+import Head from 'next/head'
 
-import MainPage from "../components/MainPage";
-import Stopwatch from "../components/PlayersResults";
+import MainPage from '../components/MainPage'
 
 export default function Home() {
   return (
@@ -14,8 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <MainPage />
-        <Stopwatch />
       </main>
     </>
-  );
+  )
 }
