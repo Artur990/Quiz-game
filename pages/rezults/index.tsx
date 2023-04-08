@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
 import { obj } from '../../hook/useTotalResult'
+
 const PlayersResults = () => {
   let rezults = obj.filter((e) => e.results === true).length
+
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-slate-700 ">
       <div className="h-2/3 w-1/2 flex-col rounded-xl bg-slate-800  p-2 ">

@@ -4,6 +4,7 @@ type TypeTotal = {
   results: boolean
 }[]
 export let obj: TypeTotal = []
+
 export const useTotalResult = () => {
   const [total, setTotal] = useState<TypeTotal>([])
   const totalFun = useCallback((id: number, results: any) => {

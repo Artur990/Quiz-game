@@ -1,20 +1,20 @@
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import { useState } from 'react'
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { useCounter } from '../Context/counterContext'
 
-const useTimeOut = (id: string | string[] | undefined) => {
-  console.log('render time hook')
+const useTimeOut = () => {
   const router = useRouter()
   const [time, setTime] = useState(30)
+  const { count, incrementCount, resetCount } = useCounter()
   const [running, setRunning] = useState(true)
-  const ids = Number(id) + 1
+
   if (time === 0) {
-    if (Number(id) === 7) {
+    if (count === 7) {
+      resetCount()
       router.push('/rezults')
     } else {
       setTime(30)
-      router.push(`/quiz/${ids}`)
+      incrementCount()
     }
   }
   useEffect(() => {

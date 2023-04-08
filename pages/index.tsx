@@ -1,8 +1,12 @@
 import Head from 'next/head'
 
 import MainPage from '../components/MainPage'
+import { useCounter } from '../Context/counterContext'
+import Link from 'next/link'
 
 export default function Home() {
+  const { count, incrementCount, resetCount, randomNumber } = useCounter()
+  randomNumber()
   return (
     <>
       <Head>
@@ -12,6 +16,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        {count}
+        <Link href={'/counter'}>Counter</Link>
         <MainPage />
       </main>
     </>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export interface LayoutProps {
   children: React.ReactNode
@@ -6,12 +7,12 @@ export interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
-      <h1 className="bg-slate-700 text-center text-4xl text-black ">
-        Quiz game
-      </h1>
+    <div className="bg-bgColor ">
+      <p className=" text-center  text-primaryColor sm:text-start ">
+        {/* QUIZ GAME */}
+      </p>
       <main>{children}</main>
-    </>
+    </div>
   )
 }
 
