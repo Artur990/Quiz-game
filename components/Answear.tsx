@@ -12,14 +12,13 @@ const Answear = (props: any) => {
   }, 1000)
 
   const fun = async () => {
-    await getID(props)
-    console.log(props)
+    getID(props)
     totalFun(props.id, props.rightAnswer)
   }
   return (
     <button
       onClick={fun}
-      className={`m-1 h-[20%] w-full rounded-lg border-[4px] border-primaryColor bg-primaryColor text-left text-xs text-bgColor hover:border-slate-500 hover:bg-slate-500 hover:text-black sm:h-[20%] sm:w-2/3  sm:text-center sm:text-base md:h-[40%] md:w-2/5 ${
+      className={`m-1 h-[25%] w-full rounded-lg border-[4px] border-primaryColor bg-primaryColor text-left text-xs text-bgColor hover:border-slate-500 hover:bg-bgColor hover:text-textColor sm:h-[20%] sm:w-2/3  sm:text-center sm:text-base md:h-[40%] md:w-2/5 ${
         answear === 'true' ? 'border-green-500 hover:border-green-500 ' : ''
       } ${answear === 'false' ? 'border-red-500 hover:border-red-500' : ''} ${
         props.select

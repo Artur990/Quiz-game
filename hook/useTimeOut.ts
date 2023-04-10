@@ -10,8 +10,8 @@ const useTimeOut = () => {
 
   if (time === 0) {
     if (count === 7) {
-      resetCount()
       router.push('/rezults')
+      resetCount()
     } else {
       setTime(30)
       incrementCount()

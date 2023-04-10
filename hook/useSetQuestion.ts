@@ -22,8 +22,8 @@ export const useSetQuestion = () => {
       setAnswear('true')
       setTimeout(() => {
         if (count === 7) {
-          resetCount()
           router.push('/rezults')
+          resetCount()
         } else {
           incrementCount()
         }
@@ -31,7 +31,7 @@ export const useSetQuestion = () => {
     } else {
       return setAnswear('false')
     }
-    return { newData }
+    // return { newData }
   }, [])
 
   return { getID, answear }
