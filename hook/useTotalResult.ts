@@ -1,18 +1,20 @@
-import { useCallback, useState } from 'react'
-type TypeTotal = {
-  id: number
-  results: boolean
-}[]
-export let obj: TypeTotal = []
+import { useCallback, useState, useRef } from 'react'
+import { useCounter } from '../Context/counterContext'
 
 export const useTotalResult = () => {
-  const [total, setTotal] = useState<TypeTotal>([])
-  const totalFun = useCallback((id: number, results: any) => {
-    let arr = obj
-    let ar = arr.find((e) => e.id === +id)
-    if (ar === undefined) {
-      obj.push({ id, results })
-    }
-  }, [])
-  return { setTotal, total, totalFun }
+  const { incrementResults, total, setTotal } = useCounter()
+  const totalFun = useCallback(
+    (id: number, results: boolean) => {
+      let ar = total.find((e) => e.id === id)
+      if (ar === undefined) {
+        setTotal((prev) => [...prev, { id, results }])
+        if (results === true) {
+          incrementResults()
+        }
+      }
+    },
+    [incrementResults]
+  )
+
+  return { totalFun }
 }

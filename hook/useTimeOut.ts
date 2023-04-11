@@ -7,28 +7,31 @@ const useTimeOut = () => {
   const [time, setTime] = useState(30)
   const { count, incrementCount, resetCount } = useCounter()
   const [running, setRunning] = useState(true)
-
-  if (time === 0) {
-    if (count === 7) {
-      router.push('/rezults')
-      resetCount()
-    } else {
-      setTime(30)
-      incrementCount()
-    }
-  }
   useEffect(() => {
-    let interval: any
-    if (running) {
-      interval = setInterval(() => {
-        setTime((prevTime) => prevTime - 1)
-      }, 1000)
-    } else if (!running) {
-      clearInterval(interval)
+    let interval: NodeJS.Timeout | null = null
+
+    const tick = () => setTime((prevTime) => prevTime - 1)
+
+    if (running && time > 0) {
+      interval = setInterval(tick, 1000)
     }
-    return () => clearInterval(interval)
-  }, [])
-  return { time, setTime }
+
+    if (time === 0) {
+      if (count === 7) {
+        router.push('/rezults')
+        resetCount()
+      } else {
+        setTime(30)
+        incrementCount()
+      }
+    }
+
+    return () => {
+      if (interval !== null) clearInterval(interval)
+    }
+  }, [running, time])
+
+  return { time, setTime, setRunning }
 }
 
 export default useTimeOut

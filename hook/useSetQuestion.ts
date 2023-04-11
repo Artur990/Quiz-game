@@ -1,23 +1,14 @@
 import { useCallback, useState } from 'react'
 import { useRouter } from 'next/router'
-import { quiz } from '../data/quizData'
-import { useGetQuetion } from './useGetQuetion'
 import { useCounter } from '../Context/counterContext'
-
-type TypeQuid = {
-  id: number
-  qid: number
-  question: string
-  rightAnswer: boolean
-}
+import { Tid } from '../types/Tcontext'
 
 export const useSetQuestion = () => {
   const { count, incrementCount, resetCount } = useCounter()
   const router = useRouter()
   const [answear, setAnswear] = useState<any>(null)
 
-  const getID = useCallback((id: TypeQuid) => {
-    const { newData } = useGetQuetion(id.id)
+  const getID = useCallback((id: Tid) => {
     if (id.rightAnswer === true) {
       setAnswear('true')
       setTimeout(() => {
@@ -31,7 +22,6 @@ export const useSetQuestion = () => {
     } else {
       return setAnswear('false')
     }
-    // return { newData }
   }, [])
 
   return { getID, answear }

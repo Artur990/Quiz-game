@@ -1,10 +1,11 @@
 import React from 'react'
 import { useSetQuestion } from '../hook/useSetQuestion'
 import { useTotalResult } from '../hook/useTotalResult'
-const Answear = (props: any) => {
+import { TQuizQuestionProps } from '../types/Tcontext'
+
+const Answear = (props: TQuizQuestionProps) => {
   const { getID, answear } = useSetQuestion()
   const { totalFun } = useTotalResult()
-
   setTimeout(() => {
     if (answear === 'true') {
       props.setTime(30)
@@ -22,7 +23,7 @@ const Answear = (props: any) => {
         answear === 'true' ? 'border-green-500 hover:border-green-500 ' : ''
       } ${answear === 'false' ? 'border-red-500 hover:border-red-500' : ''} ${
         props.select
-          ? props.rightAnswer === 'true'
+          ? props.rightAnswer === true
             ? 'border-green-500 '
             : 'border-red-500'
           : ''
