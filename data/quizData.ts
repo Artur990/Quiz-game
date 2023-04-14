@@ -255,7 +255,7 @@ export const quiz = [
     },
   ],
 
-  //question 2
+  // question 2
   [
     {
       id: 1,
@@ -1317,7 +1317,6 @@ export const quiz2 = [
       },
     ],
     rightAnswer: 'a',
-    //c
   },
   {
     id: 2,
@@ -1537,7 +1536,6 @@ export const quiz2 = [
       },
     ],
     rightAnswer: 'a',
-    //c
   },
   {
     id: 8,

@@ -3,8 +3,8 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-bgColor">
-      <div className=" min-h-[50%] w-3/4  flex-col  rounded-3xl bg-textColor p-2 text-center sm:h-2/3 lg:h-3/4">
+    <div className="flex h-screen  w-screen min-w-fit items-center justify-center bg-bgColor">
+      <div className=" min-h-[50%] w-3/4 min-w-fit  flex-col  rounded-3xl bg-textColor p-2 text-center sm:h-2/3 lg:h-3/4">
         <div className="bg-textColor font-sans text-5xl text-primaryColor">
           Quiz Gra
         </div>

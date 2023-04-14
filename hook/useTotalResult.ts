@@ -5,7 +5,7 @@ export const useTotalResult = () => {
   const { incrementResults, total, setTotal } = useCounter()
   const totalFun = useCallback(
     (id: number, results: boolean) => {
-      let ar = total.find((e) => e.id === id)
+      const ar = total.find((e) => e.id === id)
       if (ar === undefined) {
         setTotal((prev) => [...prev, { id, results }])
         if (results === true) {

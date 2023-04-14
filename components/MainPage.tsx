@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import React from 'react'
 
 const MainPage = () => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-bgColor ">
+    <div className="flex h-screen w-screen min-w-fit items-center justify-center bg-bgColor ">
       <div className="h-auto min-h-[50%] w-3/4 min-w-fit flex-col rounded-xl bg-textColor p-2 text-center text-textColor ">
         <div className="bg-textColor font-sans text-5xl text-primaryColor">
           Quiz Gra

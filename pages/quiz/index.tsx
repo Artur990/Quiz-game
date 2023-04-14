@@ -20,7 +20,7 @@ const Quiz = () => {
     window.history.forward()
   }
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-bgColor  ">
+    <div className="flex h-screen min-h-fit w-screen min-w-fit items-center justify-center bg-bgColor  ">
       {newData.map((e) => {
         return (
           <div
@@ -34,8 +34,8 @@ const Quiz = () => {
               </div>
               <div className="py-10 text-4xl text-bgColor">{e.question}</div>
             </div>
-            <div className="border border-bgColor"></div>
-            <div className="flex h-auto min-h-[15%] w-full rounded-lg sm:h-1/4">
+            <div className="border border-bgColor" />
+            <div className="flex h-[25%] min-h-[15%] w-full rounded-lg sm:h-1/4">
               <div className="flex w-full flex-wrap items-center justify-center">
                 {e.answer.map((e) => {
                   return <Answear key={e.qid} {...e} setTime={setTime} />

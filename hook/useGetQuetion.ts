@@ -4,9 +4,9 @@ import { quiz, quiz2 } from '../data/quizData'
 
 const random = Math.floor(Math.random() * quiz.length)
 const getRandomNumbers = (): number[] => {
-  let numbers: number[] = []
+  const numbers: number[] = []
   while (numbers.length < 7) {
-    let random = Math.floor(Math.random() * quiz2.length)
+    const random = Math.floor(Math.random() * quiz2.length)
     if (!numbers.includes(random)) {
       numbers.push(random)
     }
@@ -15,8 +15,8 @@ const getRandomNumbers = (): number[] => {
 }
 
 export const useGetQuetion = (id: string | string[] | undefined | number) => {
-  let data = quiz[random]
-  let newData = data.filter((e) => e.id === Number(id))
+  const data = quiz[random]
+  const newData = data.filter((e) => e.id === Number(id))
   return { newData }
 }
 
